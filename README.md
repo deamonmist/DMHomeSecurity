@@ -25,6 +25,109 @@ WiFi. One camera, the **master**, runs a website. The other cameras, the
 - A USB-C cable
 - A computer with the **Arduino IDE** (version 2 or newer)
 - A 2.4 GHz WiFi network. The boards can't use 5 GHz.
+- Optional: a 3D printer and a few M3 bolts to build a housing (see below).
+
+---
+
+## Camera housings (3D printable)
+
+The `3dModels` folder contains three versions of the camera housing. Each one
+includes a wall clip and an arm, so the camera can be mounted and aimed.
+Choose one version per camera; you can mix them across cameras.
+
+> Illustrated assembly instructions are coming soon.
+
+### Option 1: CameraStandardCap (simplest)
+
+The basic housing.
+
+**Print these files** (folder `3dModels/CameraStandardCap`):
+
+| File | Qty |
+|---|---|
+| `CameraBody.stl` | 1 |
+| `CameraCap01.stl` | 1 |
+| `VerticalArm.stl` | 1 |
+| `BottomBracket.stl` | 1 |
+| `WallClip.stl` | 1 |
+
+**Hardware**
+
+| Part | Qty |
+|---|---|
+| M3 × 6 mm bolt | 2 |
+| M3 × 16 mm bolt | 2 |
+| M3 nut | 4 |
+| M3 washer | 3 |
+
+### Option 2: CameraStickerCap
+
+The Standard housing with a different cap (`CameraCap02`) and one extra printed
+piece, the antenna extender. The hardware is the same as the Standard version.
+
+**Print these files** (folder `3dModels/CameraStickerCap`):
+
+| File | Qty |
+|---|---|
+| `CameraBody.stl` | 1 |
+| `CameraCap02.stl` | 1 |
+| `AntennaExtendor.stl` | 1 |
+| `VerticalArm.stl` | 1 |
+| `BottomBracket.stl` | 1 |
+| `WallClip.stl` | 1 |
+
+**Hardware**
+
+| Part | Qty |
+|---|---|
+| M3 × 6 mm bolt | 2 |
+| M3 × 16 mm bolt | 2 |
+| M3 nut | 4 |
+| M3 washer | 3 |
+
+### Option 3: CameraSMACap (external antenna)
+
+Lets you fit an SMA pigtail connector, so you can use an external screw-on
+WiFi antenna. That's useful for a camera that's far from your router.
+
+**Print these files** (folder `3dModels/CameraSMACap`):
+
+| File | Qty |
+|---|---|
+| `CameraBodySMAAttach.stl` | 1 |
+| `CameraCapSMAAttach.stl` | 1 |
+| `SMABracket.stl` | 1 |
+| `VerticalArm.stl` | 1 |
+| `BottomBracket.stl` | 1 |
+| `WallClip.stl` | 1 |
+
+Bambu Studio users can open `CameraSMACap_AllParts_BambuStudio.3mf` instead.
+It has all six parts laid out on one plate, set up for 0.20 mm layers and a
+0.4 mm nozzle.
+
+**Hardware**
+
+| Part | Qty |
+|---|---|
+| M3 × 6 mm bolt | 4 |
+| M3 × 16 mm bolt | 2 |
+| M3 nut | 6 |
+| M3 washer | 3 |
+| SMA pigtail (U.FL / IPEX to SMA) | 1 |
+| SMA WiFi antenna (2.4 GHz) | 1 |
+
+### Hardware totals at a glance
+
+| | Standard | Sticker | SMA |
+|---|---|---|---|
+| Printed parts | 5 | 6 | 6 |
+| M3 × 6 mm bolts | 2 | 2 | 4 |
+| M3 × 16 mm bolts | 2 | 2 | 2 |
+| M3 nuts | 4 | 4 | 6 |
+| M3 washers | 3 | 3 | 3 |
+| SMA pigtail + antenna | – | – | 1 each |
+
+All quantities are per camera.
 
 ---
 
@@ -205,6 +308,7 @@ are listed at the top of **DMHomeSecurity.ino**.
 | `status_led.cpp` | The status LED |
 | `web/` | The website's source files |
 | `tools/pack_web.py` | Rebuilds `web_assets.h` after you edit `web/` |
+| `3dModels/` | Printable camera housings (see *Camera housings*) |
 
 **To add a picture setting,** add one line to the `PARAMS` list in
 `camera.cpp`. It's saved automatically and appears on the website as a slider.
