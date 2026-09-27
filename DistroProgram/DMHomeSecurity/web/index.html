@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DMHomeSecurity</title>
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<header id="top"><h1 id="title">DMHomeSecurity</h1></header>
+
+<!-- Main page: one large camera on top, the others below -->
+<main id="grid">
+  <div id="hero" class="slot hero"></div>
+  <div id="row"></div>
+  <p id="empty" hidden>No cameras enabled. Open settings (gear) → Manage cameras.</p>
+</main>
+
+<!-- One camera full screen, with its settings on the left -->
+<section id="detail" hidden>
+  <aside id="controls">
+    <div class="aside-head">
+      <h2 id="d-name">Camera</h2>
+      <div id="d-meta" class="meta"></div>
+    </div>
+    <div id="d-body"></div>
+  </aside>
+  <div id="stage" class="slot stage">
+    <button id="fs-btn" class="icon-btn" title="Full screen" aria-label="Full screen">⛶</button>
+  </div>
+  <div id="strip"></div>
+  <button id="ctl-toggle" class="pill" aria-controls="controls">Adjust</button>
+</section>
+
+<button id="back" class="pill back" hidden>← Back</button>
+
+<button id="gear" class="gear" title="Settings" aria-label="Settings">
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.4 7.4 0 0 0-1.7-1L15 3.3h-4l-.4 2.6a7.4 7.4 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1c.5.4 1.1.7 1.7 1l.4 2.6h4l.4-2.6c.6-.3 1.2-.6 1.7-1l2.5 1 2-3.5zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z" transform="translate(-1 0)"/></svg>
+</button>
+
+<!-- Settings panel opened by the gear button -->
+<aside id="config" hidden>
+  <div class="cfg-head">
+    <h2>Configuration</h2>
+    <button id="cfg-cancel" class="pill ghost">Cancel</button>
+  </div>
+  <div id="cfg-body"></div>
+</aside>
+<button id="save" class="pill save" hidden>Save theme</button>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="/app.js"></script>
+</body>
+</html>
